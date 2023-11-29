@@ -1,12 +1,22 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { store } from './Store';
-import TaskComponent from './TaskComponent';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { UserProvider } from './UserContext';
+import LoginComponent from './LoginComponent';
+import SignupComponent from './SignupComponent';
+import HomeComponent from './Home';
 
-const App = () => (
-  <Provider store={store}>
-    <TaskComponent />
-  </Provider>
-);
+function App() {
+  return (
+    <UserProvider>
+      <Router>
+        <Routes>
+          <Route path="/login" element={<LoginComponent />} />
+          <Route path="/signup" element={<SignupComponent />} />
+          <Route path="/" element={<HomeComponent />} />
+        </Routes>
+      </Router>
+    </UserProvider>
+  );
+}
 
 export default App;
