@@ -1,4 +1,4 @@
-import { ADD_TASK, SET_TASKS, DELETE_TASK, UPDATE_TASK } from './actions';
+import { ADD_TASK, SET_TASKS, DELETE_TASK, UPDATE_TASK } from './Action';
 
 const initialState = {
   tasks: []

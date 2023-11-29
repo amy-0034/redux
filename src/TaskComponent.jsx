@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchTasks, postTask, removeTask, putTask } from './actions';
+import { fetchTasks, postTask, removeTask, putTask } from './Action';
 
 const TaskComponent = () => {
   const [newTask, setNewTask] = useState('');
@@ -33,7 +33,7 @@ const TaskComponent = () => {
           <li key={task.id}>
             {task.title}
             <button onClick={() => handleDelete(task.id)}>Delete</button>
-            <button onClick={() => handleUpdate(task.id, 'Updated Title')}>Update</button>
+            <button onClick={() => handleUpdate(task.id, newTask)}>Update</button>
           </li>
         ))}
       </ul>
