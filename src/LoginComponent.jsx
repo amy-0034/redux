@@ -22,6 +22,7 @@ const LoginComponent = () => {
       alert('User exists');
     } else {
       alert('User not found.');
+      
     }
   };
 
